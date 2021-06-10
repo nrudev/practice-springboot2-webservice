@@ -1,5 +1,6 @@
 package com.example.springboot.domain.posts;
 
+import com.example.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor // 기본 생성자 자동 추가
 @Entity // 이 클래스가 테이블과 링크될 클래스임을 나타냄. 클래스명(카멜케이스) -> 테이블명(언더스코어). Entity 클래스에서는 절대 Setter 메서드를 만들지 않음.
-public class Posts {
+public class Posts extends BaseTimeEntity {
 
     @Id // 이 테이블의 PK값
     @GeneratedValue(strategy = GenerationType.IDENTITY) // GenerationType.IDENTITY를 추가해야만 auto_increment가 됨.
